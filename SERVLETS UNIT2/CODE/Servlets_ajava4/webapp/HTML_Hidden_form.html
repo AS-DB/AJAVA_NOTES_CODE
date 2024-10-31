@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Registration</title>
+</head>
+<body>
+    <h1>User Registration</h1>
+    <form action="/Servlets_ajava4/servlet/register" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <!-- Hidden field for user type -->
+        <input type="hidden" name="userType" value="admin">
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
