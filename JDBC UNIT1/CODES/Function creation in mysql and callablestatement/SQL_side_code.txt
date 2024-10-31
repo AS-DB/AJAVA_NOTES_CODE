@@ -1,0 +1,31 @@
+#Run the CODE in my sql:-
+
+mysql> use student;
+Database changed
+mysql> DELIMITER //
+mysql> CREATE FUNCTION GetStudentName(studentId INT)
+    -> RETURNS VARCHAR(100)
+    -> DETERMINISTIC
+    -> READS SQL DATA
+    -> BEGIN
+    ->     DECLARE studentName VARCHAR(100);
+    ->     SELECT name INTO studentName FROM info WHERE id = studentId;
+    ->     RETURN studentName;
+    -> END //
+
+#Seeing this output means function declared succesfully
+Query OK, 0 rows affected (0.01 sec) 
+
+mysql> DELIMITER ;
+
+
+
+#TO see the function is declared or not
+
+mysql> SHOW FUNCTION STATUS WHERE Db = 'student' AND Name = 'GetStudentName';
++---------+----------------+----------+----------------+---------------------+---------------------+---------------+---------+----------------------+----------------------+--------------------+
+| Db      | Name           | Type     | Definer        | Modified            | Created             | Security_type | Comment | character_set_client | collation_connection | Database Collation |
++---------+----------------+----------+----------------+---------------------+---------------------+---------------+---------+----------------------+----------------------+--------------------+
+| student | GetStudentName | FUNCTION | root@localhost | 2024-09-07 10:55:39 | 2024-09-07 10:55:39 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
++---------+----------------+----------+----------------+---------------------+---------------------+---------------+---------+----------------------+----------------------+--------------------+
+1 row in set (0.00 sec)

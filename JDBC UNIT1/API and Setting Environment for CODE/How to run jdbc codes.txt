@@ -1,0 +1,17 @@
+Software require to run the code:-
+_______________________________________
+1>MySQL server
+2>java jdk
+3>mysql-connector-j-9.0.0.jar
+____________________________________________________________________________________________________________________________________
+1>First copy the mysql-connector-j-9.0.0.jar and paste to the directory lib of java folder where you installed
+e.g. C:\Program Files\java\lib (paste the file in this directory)
+
+2>Then create a Environmental path for it means hit window key and search for "Edit the system environment variable" and run as adminstaration then click "Environment variables" at right bottom side
+
+->then go to System variables and click "New" 
+->then give variable_name=CLASSPATH and Variable_value= "path of mysql-connector-j-9.0.0" e.g. Variable_value=C:\Program Files\java\lib\mysql-connector-j-9.0.0.jar
+
+3>Then hit ok and then hit apply
+
+4>Restart your pc and you can write Advance java code anywhere it can easily accessible and used in main code
